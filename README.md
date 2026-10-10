@@ -21,14 +21,14 @@ Based on the analysis of the dataset:
 |---|---:|
 | Flights in dataset | 5,819,079 |
 | Flights with positive arrival delay | 2,086,896 |
-| Overall delay rate reported by the project | 35.86% |
+| Overall delay rate | Calculated from flights with recorded arrival delays by the analysis scripts |
 | Cancelled flights | 89,884 |
 | Cancellation rate | 1.54% |
 | Average arrival delay | 4.41 minutes |
 
 The analysis also compares airline delay rates, monthly average arrival delays, cancellation rates, destination-airport delay rates, and reported causes of delay. In the cause breakdown, late-arriving aircraft and airline-related issues are the largest categories.
 
-**Metric note:** Arrival-delay analyses exclude rows where `ARRIVAL_DELAY` is missing. The overall KPI definitions should be checked against the Power BI measures before comparing numbers across tools.
+**Metric definition:** Delay rate is delayed flights (`ARRIVAL_DELAY > 0`) divided by flights with a recorded `ARRIVAL_DELAY`. The Python KPI, SQLite KPI script, and reusable SQL summary use this denominator. Cancellation rate uses all flight records. Update/check the Power BI delay-rate measure with the same definition before comparing dashboard figures.
 
 ## Tools
 
