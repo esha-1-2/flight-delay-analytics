@@ -28,7 +28,7 @@ Based on the analysis of the dataset:
 
 The analysis also compares airline delay rates, monthly average arrival delays, cancellation rates, destination-airport delay rates, and reported causes of delay. In the cause breakdown, late-arriving aircraft and airline-related issues are the largest categories.
 
-**Metric definition:** Delay rate is delayed flights (`ARRIVAL_DELAY > 0`) divided by flights with a recorded `ARRIVAL_DELAY`. The Python KPI, SQLite KPI script, and reusable SQL summary use this denominator. Cancellation rate uses all flight records. Update/check the Power BI delay-rate measure with the same definition before comparing dashboard figures.
+**Metric definitions:** Delay rate is the number of flights with `ARRIVAL_DELAY > 0` divided by the number of flights with a recorded `ARRIVAL_DELAY`; rows with a missing arrival delay are excluded from this rate. The Python KPI, SQLite KPI script, and reusable SQL summary use this same denominator. Cancellation rate is cancelled flights divided by all flight records. The Power BI delay-rate and cancellation-rate measures should use these definitions for consistent comparisons.
 
 ## Tools
 
@@ -107,9 +107,9 @@ This prints the overall KPI summary from the SQLite database created in the prev
 ## Important definitions
 
 - **Positive arrival delay:** `ARRIVAL_DELAY > 0`.
-- **Delay rate:** delayed flights divided by the chosen flight denominator. Verify whether cancelled flights and rows with missing arrival delay are excluded when comparing across tools.
+- **Delay rate:** flights with `ARRIVAL_DELAY > 0` divided by flights with a non-missing `ARRIVAL_DELAY`.
 - **Average arrival delay:** mean of available `ARRIVAL_DELAY` values, in minutes.
-- **Cancellation rate:** cancelled flights divided by the chosen flight denominator.
+- **Cancellation rate:** cancelled flights divided by all rows in the dataset.
 
 ## Dataset source
 
