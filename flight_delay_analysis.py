@@ -623,8 +623,10 @@ cancelled_flights = (
     flights["CANCELLED"] == 1
 ).sum()
 
+flights_with_known_arrival_delay = flights["ARRIVAL_DELAY"].notna().sum()
+
 delay_rate = (
-    delayed_flights / total_flights
+    delayed_flights / flights_with_known_arrival_delay
 ) * 100
 
 cancellation_rate = (
@@ -644,6 +646,7 @@ print("FINAL PROJECT KPI SUMMARY")
 print("==========================================")
 
 print(f"Total Flights: {total_flights:,}")
+print(f"Flights with Known Arrival Delay: {flights_with_known_arrival_delay:,}")
 print(f"Delayed Flights: {delayed_flights:,}")
 print(f"Delay Rate: {delay_rate:.2f}%")
 print(f"Cancelled Flights: {cancelled_flights:,}")
