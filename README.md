@@ -94,7 +94,7 @@ Run this once after placing `data/flights.csv`:
 python load_database.py
 ```
 
-This creates `sql/flight_delay.db` and loads the flights table. If you need to rebuild it, first remove the generated database file and run the command again; do not rerun the loader on an existing database unless you intend to append rows.
+This creates `sql/flight_delay.db` and loads the flights table. The script removes an existing generated database first, so rerunning it rebuilds the database instead of duplicating rows.
 
 ### 5. Run the SQL KPI summary
 
@@ -102,7 +102,7 @@ This creates `sql/flight_delay.db` and loads the flights table. If you need to r
 python run_sql.py
 ```
 
-This prints the overall KPI summary from the SQLite database created in the previous step.
+This prints the overall KPI summary from the SQLite database created in the previous step. Additional reusable queries are available in `flight_delay_analysis.sql`.
 
 ## Important definitions
 
