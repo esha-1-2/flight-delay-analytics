@@ -26,6 +26,7 @@ This project analyzes flight delays, cancellations, airline performance, and mon
 - Late-arriving aircraft and airline-related issues were the two largest reported delay causes.
 
 ## Dashboard
+![Flight Delay Analytics Dashboard](dashboard.png)
 The Power BI dashboard includes five KPI cards and three charts:
 - Airline Delay Rate Comparison
 - Cancellation Rate by Airline
