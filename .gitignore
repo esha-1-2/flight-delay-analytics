@@ -1,0 +1,14 @@
+# Local dataset files (download separately from Kaggle)
+data/
+# Generated SQLite database
+sql/*.db
+# Python cache
+__pycache__/
+*.py[cod]
+# Virtual environments
+.venv/
+venv/
+# Editor/OS files
+.vscode/
+.DS_Store
+Thumbs.db
